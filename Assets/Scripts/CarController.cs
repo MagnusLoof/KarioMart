@@ -81,7 +81,7 @@ public class CarController : MonoBehaviour
             CarController otherPlayer = collision.transform.GetComponent<CarController>();
             otherPlayer.speedBoost = false;
             otherPlayer.timer = 0f;
-            Debug.Log("Explosion");
+            Logger.Log("Impact");
             otherPlayer.rb.AddForce(new Vector3(bumpStrength, 0, bumpStrength), ForceMode.Impulse);
             //otherPlayer.rb.MoveRotation(otherPlayer.rb.rotation * rb.rotation * (deltaRotation));
         }
@@ -98,7 +98,7 @@ public class CarController : MonoBehaviour
     {
         if (other.transform.tag == "Checkpoint")
         {
-            currentCheckpoint++;
+            //currentCheckpoint++;
         }
     }
 }

@@ -23,6 +23,7 @@ public class SpeedBoost : MonoBehaviour
 
         if(timer >= respawnTimer)
         {
+            Logger.Log("Speedboost respawned");
             meshRenderer.enabled = true;
             sphereCollider.enabled = true;
             activated = false;
@@ -34,6 +35,7 @@ public class SpeedBoost : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
+            Logger.Log("Speedboost activated");
             car = other.gameObject.GetComponent<CarController>();
             car.speedBoost = true;
             car.timer = 0f;
