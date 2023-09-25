@@ -6,7 +6,7 @@ public class CheckpointController : MonoBehaviour
 {
     private List<GameObject> checkpoints = new List<GameObject>();
     public int currentCheckpoint;
-    public int lap;
+    public int lap = 1;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,15 +28,16 @@ public class CheckpointController : MonoBehaviour
         {
             if(currentCheckpoint == RaceManager.instance.checkpoints.Count)
             {
-                if(lap < 2)
+                if(lap < 3)
                 {
                     checkpoints.Clear();
                     currentCheckpoint = 0;
                     lap++;
+                    Logger.Log(gameObject.name + " is on lap " + lap.ToString());
                 }
                 else
                 {
-                    Debug.Log("You win");
+                    Logger.Log("You win");
                 }
             }
         }

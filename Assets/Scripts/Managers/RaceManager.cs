@@ -12,5 +12,4 @@ public class RaceManager : MonoBehaviour
     }
 
     [SerializeField] public List<GameObject> checkpoints = new List<GameObject>();
-    [SerializeField] private List<CarController> cars = new List<CarController>();
 }

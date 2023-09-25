@@ -53,18 +53,10 @@ public class CarController : MonoBehaviour
         {
             speedBoost = false;
         }
-        //rb.AddForce(momentum * speed * Time.deltaTime);
-        //rb.velocity += momentum;
     }
 
     private void FixedUpdate()
     {
-        /*
-        rb.MovePosition(transform.position + momentum * speed * Time.deltaTime);
-
-        Quaternion deltaRotation = Quaternion.Euler(rotation * speed * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
-        */
         deltaRotation = Quaternion.Euler(rotation * rotateSpeed * Time.deltaTime * 57.3f);
         rb.MoveRotation(rb.rotation * deltaRotation);
         rb.MovePosition(rb.position + transform.forward * momentum.x * speed * speedBoostModifier * Time.deltaTime);
@@ -76,6 +68,7 @@ public class CarController : MonoBehaviour
         {
             acceleration.Disable();
         }
+
         if (collision.transform.tag == "Player")
         {
             CarController otherPlayer = collision.transform.GetComponent<CarController>();
@@ -83,7 +76,6 @@ public class CarController : MonoBehaviour
             otherPlayer.timer = 0f;
             Logger.Log("Impact");
             otherPlayer.rb.AddForce(new Vector3(bumpStrength, 0, bumpStrength), ForceMode.Impulse);
-            //otherPlayer.rb.MoveRotation(otherPlayer.rb.rotation * rb.rotation * (deltaRotation));
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -91,14 +83,6 @@ public class CarController : MonoBehaviour
         if (collision.transform.tag == "Wall")
         {
             acceleration.Enable();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "Checkpoint")
-        {
-            //currentCheckpoint++;
         }
     }
 }

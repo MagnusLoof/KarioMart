@@ -7,23 +7,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private void Awake()
+    public void Initialize()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
-
+            if(SceneManager.GetActiveScene() == null)
+            {
+                Load("StartScene");
+            }
             return;
         }
 
         Destroy(gameObject);
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
-    {
-        Logger.Log("Loaded " + scene.name);
     }
 
     public void Load(string sceneName)
