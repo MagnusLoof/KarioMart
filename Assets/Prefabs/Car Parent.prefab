@@ -205,6 +205,7 @@ MonoBehaviour:
   timer: 0
   bumpStrength: 50
   bumpRadius: 5
+  currentCheckpoint: 0
 --- !u!54 &4083845302995605448
 Rigidbody:
   m_ObjectHideFlags: 0

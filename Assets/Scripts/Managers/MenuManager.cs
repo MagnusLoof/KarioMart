@@ -29,6 +29,18 @@ public class MenuManager : MonoBehaviour
         //uiToEnable.SetActive(true);
     }
 
+    public void TogglePause()
+    {
+        if(Time.timeScale == 1.0)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
+
     public void ChangeCar(bool direction)
     {
 
