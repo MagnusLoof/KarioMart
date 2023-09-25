@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nightland.unity
     guid: f4094473945255b44af5faad1048b779
+  - enabled: 1
+    path: Assets/Scenes/Grayscaletown.unity
+    guid: 655db51194c000141acebe46226d1fa7
   m_configObjects: {}

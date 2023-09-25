@@ -249,7 +249,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7422992895441997493, guid: 895ea400f583d9d4e8ce4aa434713cb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1063,6 +1064,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: StartScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 801238512}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &392537721
@@ -2652,7 +2665,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7422992895441997493, guid: 895ea400f583d9d4e8ce4aa434713cb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5684,6 +5698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start/End
       objectReference: {fileID: 0}
+    - target: {fileID: 7188532037279207252, guid: 11ca6b24f3c023a4b940c2ee515fb77a, type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     - target: {fileID: 7764085061813687906, guid: 11ca6b24f3c023a4b940c2ee515fb77a, type: 3}
       propertyPath: m_Size.y
       value: 2
@@ -5692,7 +5710,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 294197466966017393, guid: 11ca6b24f3c023a4b940c2ee515fb77a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5754,7 +5773,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7422992895441997493, guid: 895ea400f583d9d4e8ce4aa434713cb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

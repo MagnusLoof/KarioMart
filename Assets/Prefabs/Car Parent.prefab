@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8364128243266788135}
   - component: {fileID: 2866200281984297112}
   - component: {fileID: 1180907209780866641}
+  - component: {fileID: 286782753724921830}
   - component: {fileID: 4083845302995605448}
   - component: {fileID: 3330193489712516259}
   m_Layer: 0
@@ -206,6 +207,18 @@ MonoBehaviour:
   bumpStrength: 50
   bumpRadius: 5
   currentCheckpoint: 0
+--- !u!114 &286782753724921830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231223132099610894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b5f158ffabf1544b07c1741c95ebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &4083845302995605448
 Rigidbody:
   m_ObjectHideFlags: 0

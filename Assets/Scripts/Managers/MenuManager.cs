@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
 
     public void TogglePause()
     {
+        // The buttons that return you to the main menu will also call for TogglePause to make sure that the timeScale gets returned to normal
         if(Time.timeScale == 1.0)
         {
             Time.timeScale = 0.0f;
