@@ -37,6 +37,7 @@ public class CarController : MonoBehaviour
     {
         momentum = new Vector3(acceleration.ReadValue<float>(), 0, 0);
         rotation = new Vector3(0, turn.ReadValue<float>(), 0);
+
         if(speedBoost)
         {
             speedBoostModifier = 1.5f;

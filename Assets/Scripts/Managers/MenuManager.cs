@@ -34,6 +34,11 @@ public class MenuManager : MonoBehaviour
         GameManager.instance.Load(sceneToLoad);
     }
 
+    public void RestartMap()
+    {
+        GameManager.instance.Load(SceneManager.GetActiveScene().name);
+    }
+
     public void Exit()
     {
 #if UNITY_EDITOR

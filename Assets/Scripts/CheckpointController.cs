@@ -37,6 +37,8 @@ public class CheckpointController : MonoBehaviour
                 }
                 else
                 {
+
+                    Time.timeScale = 0.0f;
                     Logger.Log("You win");
                 }
             }
