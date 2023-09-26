@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 31335644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596437025}
+        m_TargetAssemblyTypeName: CarCustomizer, Assembly-CSharp
+        m_MethodName: NextCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31335644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69363848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596437025}
+        m_TargetAssemblyTypeName: CarCustomizer, Assembly-CSharp
+        m_MethodName: NextCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69363848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,10 +911,10 @@ RectTransform:
   - {fileID: 932667716}
   m_Father: {fileID: 1587026343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1440, y: -421.13205}
-  m_SizeDelta: {x: 960, y: 842.2641}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 960, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321417950
 MonoBehaviour:
@@ -1397,6 +1421,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596437024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596437026}
+  - component: {fileID: 596437025}
+  m_Layer: 0
+  m_Name: TempCarCustomizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596437025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596437024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f12b3109ffe3a4e8678f521d05cbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModels:
+  - {fileID: 8778870247472038908, guid: 3533ea7e69fa4e34d8b6c4140bd92a34, type: 3}
+  - {fileID: 8778870247472038908, guid: 04831f77b8d913144a16ea0e37781e85, type: 3}
+  - {fileID: 8778870247472038908, guid: 8fce8341a8425bc4ca35bdb77882ade6, type: 3}
+  - {fileID: 8778870247472038908, guid: b84a80bef16cb5d4a991cedbca687da3, type: 3}
+  indice: 0000000000000000
+--- !u!4 &596437026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596437024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.36, y: 0, z: -12.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616977879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1552,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 616977882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596437025}
+        m_TargetAssemblyTypeName: CarCustomizer, Assembly-CSharp
+        m_MethodName: PrevCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &616977882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &658794886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2438,10 +2524,10 @@ RectTransform:
   - {fileID: 648127608}
   m_Father: {fileID: 1587026343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480, y: -421.13205}
-  m_SizeDelta: {x: 960, y: 842.2641}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 960, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214682514
 MonoBehaviour:
@@ -4130,7 +4216,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1714072321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596437025}
+        m_TargetAssemblyTypeName: CarCustomizer, Assembly-CSharp
+        m_MethodName: PrevCar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1714072321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5324,3 +5422,4 @@ SceneRoots:
   - {fileID: 1306161096}
   - {fileID: 108239326}
   - {fileID: 593896407}
+  - {fileID: 596437026}

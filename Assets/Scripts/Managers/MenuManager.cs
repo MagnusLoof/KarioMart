@@ -34,7 +34,6 @@ public class MenuManager : MonoBehaviour
         GameManager.instance.Load(sceneToLoad);
     }
 
-
     public void Exit()
     {
 #if UNITY_EDITOR

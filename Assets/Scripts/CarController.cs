@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour
 {
     [SerializeField] private InputAction acceleration;
@@ -66,6 +65,9 @@ public class CarController : MonoBehaviour
     {
         if (collision.transform.tag == "Wall")
         {
+            Vector3 dir = collision.contacts[0].point - transform.position;
+            dir = -dir;
+            rb.AddForce(dir * bumpStrength, ForceMode.Force);
             acceleration.Disable();
         }
 

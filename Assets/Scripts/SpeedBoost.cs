@@ -36,7 +36,7 @@ public class SpeedBoost : MonoBehaviour
         if (other.transform.tag == "Player")
         {
             Logger.Log("Speedboost activated");
-            car = other.gameObject.GetComponent<CarController>();
+            car = other.gameObject.GetComponentInParent<CarController>();
             car.speedBoost = true;
             car.timer = 0f;
             activated = true;
