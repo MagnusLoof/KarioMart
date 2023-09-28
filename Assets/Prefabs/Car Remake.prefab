@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   rb: {fileID: 982504634729005077}
-  speed: 15
+  speed: 25
   rotateSpeed: 8
   speedBoost: 0
   boostDuration: 3
@@ -163,6 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCheckpoint: 0
   lap: 1
+  carId: 0
+  instantWin: 0
 --- !u!114 &8351688581233079448
 MonoBehaviour:
   m_ObjectHideFlags: 0

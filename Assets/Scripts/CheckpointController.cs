@@ -7,6 +7,20 @@ public class CheckpointController : MonoBehaviour
     private List<GameObject> checkpoints = new List<GameObject>();
     public int currentCheckpoint;
     public int lap = 1;
+    public int carId;
+    private float lapTimer;
+    private float kentLapTimer;
+    private bool hasWon;
+
+#if UNITY_EDITOR
+    public bool instantWin;
+#endif
+
+    private void Update()
+    {
+        lapTimer += Time.deltaTime;
+        kentLapTimer += Time.deltaTime;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,20 +42,31 @@ public class CheckpointController : MonoBehaviour
         {
             if(currentCheckpoint == RaceManager.instance.checkpoints.Count)
             {
-                if(lap < 3)
+                RaceManager.instance.AddLap(lapTimer, carId);
+                RaceManager.instance.AddKentLap(kentLapTimer, carId);
+                lapTimer = 0;
+
+                if (lap < RaceManager.instance.lapsToWin)
                 {
                     checkpoints.Clear();
                     currentCheckpoint = 0;
                     lap++;
                     Logger.Log(gameObject.name + " is on lap " + lap.ToString());
                 }
-                else
+                else if(!hasWon)
                 {
-
-                    Time.timeScale = 0.0f;
+                    hasWon = true;
                     Logger.Log("You win");
+                    RaceManager.instance.CalculateWinTime(carId);
+                    Time.timeScale = 0.0f;
                 }
             }
+#if UNITY_EDITOR
+            if (instantWin)
+            {
+                Time.timeScale = 0.0f;
+            }
+#endif
         }
     }
     public void PassCheckpoint(GameObject checkpointIn)
