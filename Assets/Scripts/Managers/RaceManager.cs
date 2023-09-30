@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RaceManager : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class RaceManager : MonoBehaviour
     private List<List<float>> kentLap = new List<List<float>>();
     [SerializeField] private List<float> raceTotalTime = new List<float>();
     [SerializeField] public List<GameObject> checkpoints = new List<GameObject>();
+
+    /*
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private TextMeshProUGUI winText;
+    */
 
     private void Start()
     {
@@ -63,8 +69,8 @@ public class RaceManager : MonoBehaviour
         }
 
         raceTotalTime.Reverse();
-        
 
+        RaceWon(carId);
         /*
         for (int i = kentLap[carId].Count - 1; i > 0; i--)
         {
@@ -80,9 +86,14 @@ public class RaceManager : MonoBehaviour
 
     public void RaceWon(int carId)
     {
-        for (int i = 0; i < lapTimes[carId].Count; i++)
+        Time.timeScale = 0f;
+        MenuManager.instance.Win(carId, raceTotalTime);
+        /*
+        winText.text = "Player " + carId.ToString() + " wins!";
+        for (int i = 0; i < raceTotalTime.Count; i++)
         {
-            Logger.Log(lapTimes[carId][i].ToString());
+            winText.text += "<br> Lap " + i + ": " + raceTotalTime[i].ToString();
         }
+        */
     }
 }

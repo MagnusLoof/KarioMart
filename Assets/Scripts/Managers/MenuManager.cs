@@ -1,10 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager instance;
+
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private TextMeshProUGUI winScreenText;
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        Destroy(gameObject);
+    }
+
     public void ToggleMenu(GameObject menuToToggle)
     {
         menuToToggle.SetActive(!menuToToggle.activeInHierarchy);
@@ -37,6 +55,17 @@ public class MenuManager : MonoBehaviour
     public void RestartMap()
     {
         GameManager.instance.Load(SceneManager.GetActiveScene().name);
+    }
+
+    public void Win(int carId, List<float> time)
+    {
+        winScreen.SetActive(true);
+
+        winScreenText.text = "Player " + carId.ToString() + " wins!";
+        for (int i = 0; i < time.Count; i++)
+        {
+            winScreenText.text += "<br> Lap " + i + ": " + time[i].ToString();
+        }
     }
 
     public void Exit()

@@ -8,8 +8,7 @@ public class CarCustomizer : MonoBehaviour
     public static CarCustomizer instance;
 
     [SerializeField] public List<GameObject> carModels = new List<GameObject>();
-    // Make this into a Sprite list, not a stupid fucking Texture2D list
-    [SerializeField] private List<Texture2D> carTextures = new List<Texture2D>();
+    [SerializeField] public List<Sprite> carSprites = new List<Sprite>();
     [SerializeField] private List<Image> carImages = new List<Image>();
 
     [SerializeField] public int[] indice;
@@ -56,7 +55,7 @@ public class CarCustomizer : MonoBehaviour
 
     public void ChangeCar(int index)
     {
-        carImages[index].sprite = Sprite.Create(carTextures[indice[index]], new Rect(0, 0, 160f, 160f), new Vector2());
+        carImages[index].sprite = carSprites[indice[index]];
     }
 
     public void CarLog(int index)
