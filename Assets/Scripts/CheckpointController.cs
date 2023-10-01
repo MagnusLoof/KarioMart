@@ -8,7 +8,6 @@ public class CheckpointController : MonoBehaviour
     public int currentCheckpoint;
     public int lap = 1;
     public int carId;
-    private float lapTimer;
     private float kentLapTimer;
     private bool hasWon;
 
@@ -18,7 +17,6 @@ public class CheckpointController : MonoBehaviour
 
     private void Update()
     {
-        lapTimer += Time.deltaTime;
         kentLapTimer += Time.deltaTime;
     }
 
@@ -42,9 +40,7 @@ public class CheckpointController : MonoBehaviour
         {
             if(currentCheckpoint == RaceManager.instance.checkpoints.Count)
             {
-                RaceManager.instance.AddLap(lapTimer, carId);
                 RaceManager.instance.AddKentLap(kentLapTimer, carId);
-                lapTimer = 0;
 
                 if (lap < RaceManager.instance.lapsToWin)
                 {

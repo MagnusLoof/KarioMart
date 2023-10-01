@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class MenuManager : MonoBehaviour
 {

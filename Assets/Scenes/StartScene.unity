@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 31335645}
   - component: {fileID: 31335644}
   - component: {fileID: 31335643}
-  - component: {fileID: 31335646}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -256,19 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31335641}
   m_CullTransparentMesh: 1
---- !u!114 &31335646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31335641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528799ade34f70041aa0b3fe09051713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
 --- !u!1 &57460232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,18 +2906,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1306161098}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: RestartMap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: StartScene
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1306161098}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: ToggleMenu
         m_Mode: 2
         m_Arguments:
@@ -2944,14 +2918,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1306161098}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ToggleMenu
-        m_Mode: 2
+        m_MethodName: RestartMap
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 270804170}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: StartScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &681089375
@@ -4658,7 +4632,6 @@ GameObject:
   - component: {fileID: 1306161095}
   - component: {fileID: 1306161094}
   - component: {fileID: 1306161093}
-  - component: {fileID: 1306161097}
   - component: {fileID: 1306161098}
   m_Layer: 5
   m_Name: Canvas
@@ -4751,18 +4724,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1306161097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306161092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac06572c899396428d36d19cf17fabf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1306161098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4856,7 +4817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
