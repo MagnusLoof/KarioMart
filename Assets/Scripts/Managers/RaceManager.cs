@@ -7,15 +7,13 @@ public class RaceManager : MonoBehaviour
 {
     public static RaceManager instance;
     public int lapsToWin = 3;
+    public bool raceStarted;
+    public List<GameObject> checkpoints = new List<GameObject>();
 
-    private List<List<float>> kentLap = new List<List<float>>();
     [SerializeField] private List<float> raceTotalTime = new List<float>();
-    [SerializeField] public List<GameObject> checkpoints = new List<GameObject>();
-
-    /*
-    [SerializeField] private GameObject winScreen;
-    [SerializeField] private TextMeshProUGUI winText;
-    */
+    [SerializeField] private TextMeshProUGUI countdownText;
+    private List<List<float>> kentLap = new List<List<float>>();
+    private float timer = 3;
 
     private void Start()
     {
@@ -29,6 +27,21 @@ public class RaceManager : MonoBehaviour
 
         }
         Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        if (!raceStarted)
+        {
+            timer -= Time.deltaTime;
+            countdownText.text = string.Format("{0:0.00}", timer);
+            if(timer <= 0)
+            {
+                raceStarted = true;
+                countdownText.text = "";
+                Logger.Log("Race has started");
+            }
+        }
     }
 
     public void AddKentLap(float lapTimeIn, int carId)

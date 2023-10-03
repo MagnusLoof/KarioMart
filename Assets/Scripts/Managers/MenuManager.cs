@@ -60,7 +60,7 @@ public class MenuManager : MonoBehaviour
     {
         winScreen.SetActive(true);
 
-        winScreenText.text = "Player " + carId.ToString() + " wins!";
+        winScreenText.text = "Player " + (carId + 1).ToString() + " wins!";
         for (int i = 0; i < time.Count; i++)
         {
             winScreenText.text += "<br> Lap " + i + ": " + time[i].ToString();

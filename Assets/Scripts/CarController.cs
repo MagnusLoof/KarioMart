@@ -29,8 +29,7 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
-        acceleration.Enable();
-        turn.Enable();
+        Invoke("EnableCar", 3f);
     }
 
     private void Update()
@@ -60,6 +59,12 @@ public class CarController : MonoBehaviour
         deltaRotation = Quaternion.Euler(rotation * rotateSpeed * Time.deltaTime * 57.3f);
         rb.MoveRotation(rb.rotation * deltaRotation);
         rb.MovePosition(rb.position + transform.forward * momentum.x * speed * speedBoostModifier * Time.deltaTime);
+    }
+
+    private void EnableCar()
+    {
+        acceleration.Enable();
+        turn.Enable();
     }
 
     private void OnCollisionEnter(Collision collision)

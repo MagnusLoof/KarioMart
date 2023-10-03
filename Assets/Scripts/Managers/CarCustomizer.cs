@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 public class CarCustomizer : MonoBehaviour
 {
     public static CarCustomizer instance;
@@ -10,6 +11,7 @@ public class CarCustomizer : MonoBehaviour
     [SerializeField] public List<GameObject> carModels = new List<GameObject>();
     [SerializeField] public List<Sprite> carSprites = new List<Sprite>();
     [SerializeField] private List<Image> carImages = new List<Image>();
+    [SerializeField] private List<TextMeshProUGUI> carModelNames = new List<TextMeshProUGUI>();
 
     [SerializeField] public int[] indice;
 
@@ -56,6 +58,7 @@ public class CarCustomizer : MonoBehaviour
     public void ChangeCar(int index)
     {
         carImages[index].sprite = carSprites[indice[index]];
+        carModelNames[index].text = carSprites[indice[index]].name;
     }
 
     public void CarLog(int index)
