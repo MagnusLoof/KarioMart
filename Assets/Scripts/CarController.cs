@@ -27,6 +27,7 @@ public class CarController : MonoBehaviour
 
     public int currentCheckpoint;
 
+    // Instead of needing a reference to the RaceManager I just use a 3f delay
     private void Start()
     {
         Invoke("EnableCar", 3f);

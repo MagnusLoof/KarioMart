@@ -53,6 +53,11 @@ public class RaceManager : MonoBehaviour
         Logger.Log(lapTimeIn.ToString());
     }
 
+    // Every lap after the first one will have all the previous laptimes included
+    // So I reverse the lists of laptimes for the winning carId
+    // To calculate the time for the 5th lap I just need to subtract the 4th lap
+    // Example: 5th lap includes all laps, whereas 4th lap has all laps except the 5th
+    // So when we do 5th lap -= 4th lap we are left with the time that only the 5th lap took
     public void CalculateWinTime(int carId)
     {
         for (int i = 0; i < lap[carId].Count; i++)

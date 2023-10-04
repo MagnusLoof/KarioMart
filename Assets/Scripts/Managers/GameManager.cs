@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            if(SceneManager.GetActiveScene() == null)
+            if(SceneManager.GetActiveScene().name != "StartScene")
             {
                 Load("StartScene");
             }
