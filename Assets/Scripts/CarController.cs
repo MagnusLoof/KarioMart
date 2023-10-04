@@ -54,6 +54,8 @@ public class CarController : MonoBehaviour
         }
     }
 
+    // deltaRotation was a bit low so I multiplited with an arbitrary number
+    // I decided to pick 57.3f purely because it's the value of a a radian in degrees.
     private void FixedUpdate()
     {
         deltaRotation = Quaternion.Euler(rotation * rotateSpeed * Time.deltaTime * 57.3f);
@@ -69,7 +71,7 @@ public class CarController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Wall")
+        if (collision.transform.CompareTag("Wall"))
         {
             Vector3 dir = collision.contacts[0].point - transform.position;
             dir = -dir;
@@ -77,7 +79,7 @@ public class CarController : MonoBehaviour
             acceleration.Disable();
         }
 
-        if (collision.transform.tag == "Player")
+        if (collision.transform.CompareTag("Player"))
         {
             CarController otherPlayer = collision.transform.GetComponent<CarController>();
             otherPlayer.speedBoost = false;
@@ -86,9 +88,10 @@ public class CarController : MonoBehaviour
             otherPlayer.rb.AddForce(new Vector3(bumpStrength, 0, bumpStrength), ForceMode.Impulse);
         }
     }
+
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.transform.tag == "Wall")
+        if (collision.transform.CompareTag("Wall"))
         {
             acceleration.Enable();
         }

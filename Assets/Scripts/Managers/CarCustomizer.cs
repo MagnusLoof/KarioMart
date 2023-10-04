@@ -8,12 +8,13 @@ public class CarCustomizer : MonoBehaviour
 {
     public static CarCustomizer instance;
 
-    [SerializeField] public List<GameObject> carModels = new List<GameObject>();
-    [SerializeField] public List<Sprite> carSprites = new List<Sprite>();
+    public List<GameObject> carModels = new List<GameObject>();
+    public List<Sprite> carSprites = new List<Sprite>();
+
     [SerializeField] private List<Image> carImages = new List<Image>();
     [SerializeField] private List<TextMeshProUGUI> carModelNames = new List<TextMeshProUGUI>();
 
-    [SerializeField] public int[] indice;
+    public int[] indice;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class CarCustomizer : MonoBehaviour
         {
             indice[index] = 0;
         }
+
         ChangeCar(index);
         CarLog(index);
     }
@@ -51,6 +53,7 @@ public class CarCustomizer : MonoBehaviour
         {
             indice[index] = carModels.Count - 1;
         }
+
         ChangeCar(index);
         CarLog(index);
     }

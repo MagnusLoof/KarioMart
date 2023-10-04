@@ -20,6 +20,7 @@ public class FPSLimiter : MonoBehaviour
     public void ChangeFpsCap()
     {
         sliderText.text = fpsSlider.value.ToString();
+
         if(fpsCap)
         {
             Application.targetFrameRate = (int)fpsSlider.value;

@@ -12,20 +12,23 @@ public class RaceManager : MonoBehaviour
 
     [SerializeField] private List<float> raceTotalTime = new List<float>();
     [SerializeField] private TextMeshProUGUI countdownText;
-    private List<List<float>> kentLap = new List<List<float>>();
+
+    private List<List<float>> lap = new List<List<float>>();
     private float timer = 3;
 
     private void Start()
     {
-        kentLap.Add(new List<float>());
-        kentLap.Add(new List<float>());
+        // Hardcoding the addition of two list is definetly not the best solution
+        // For loop adding a list for each car  be better for an adjustable quantity
+        lap.Add(new List<float>());
+        lap.Add(new List<float>());
 
         if (instance == null)
         {
             instance = this;
             return;
-
         }
+
         Destroy(gameObject);
     }
 
@@ -44,31 +47,31 @@ public class RaceManager : MonoBehaviour
         }
     }
 
-    public void AddKentLap(float lapTimeIn, int carId)
+    public void AddLap(float lapTimeIn, int carId)
     {
-        kentLap[carId].Add(lapTimeIn);
+        lap[carId].Add(lapTimeIn);
         Logger.Log(lapTimeIn.ToString());
     }
 
     public void CalculateWinTime(int carId)
     {
-        for (int i = 0; i < kentLap[carId].Count; i++)
+        for (int i = 0; i < lap[carId].Count; i++)
         {
-            Logger.Log("Car: " + carId + " total time: " + kentLap[carId][i].ToString());
+            Logger.Log("Car: " + carId + " total time: " + lap[carId][i].ToString());
         }
         
-        kentLap[carId].Reverse();
-        Logger.Log("Reversed kentLap");
+        lap[carId].Reverse();
+        Logger.Log("Reversed lap");
 
-        for (int i = 0; i < kentLap[carId].Count; i++)
+        for (int i = 0; i < lap[carId].Count; i++)
         {
-            if(i < kentLap[carId].Count - 1)
+            if(i < lap[carId].Count - 1)
             {
-                raceTotalTime.Add(kentLap[carId][i] -= kentLap[carId][i + 1]);
+                raceTotalTime.Add(lap[carId][i] -= lap[carId][i + 1]);
             }
             else
             {
-                raceTotalTime.Add(kentLap[carId][i]);
+                raceTotalTime.Add(lap[carId][i]);
             }
         }
 

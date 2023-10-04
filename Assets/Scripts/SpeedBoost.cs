@@ -33,7 +33,7 @@ public class SpeedBoost : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.CompareTag("Player"))
         {
             Logger.Log("Speedboost activated");
             car = other.gameObject.GetComponentInParent<CarController>();

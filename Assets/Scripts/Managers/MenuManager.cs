@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private GameObject winScreen;
     [SerializeField] private TextMeshProUGUI winScreenText;
+
     public void Awake()
     {
         if (instance == null)
@@ -19,18 +20,17 @@ public class MenuManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             return;
         }
+
         Destroy(gameObject);
     }
 
     public void ToggleMenu(GameObject menuToToggle)
     {
         menuToToggle.SetActive(!menuToToggle.activeInHierarchy);
-        //uiToEnable.SetActive(true);
     }
 
     public void TogglePause()
     {
-        // The buttons that return you to the main menu will also call for TogglePause to make sure that the timeScale gets returned to normal
         if(Time.timeScale == 1.0)
         {
             Time.timeScale = 0.0f;
@@ -39,11 +39,6 @@ public class MenuManager : MonoBehaviour
         {
             Time.timeScale = 1.0f;
         }
-    }
-
-    public void ChangeCar(bool direction)
-    {
-
     }
 
     public void StartGame(string sceneToLoad)

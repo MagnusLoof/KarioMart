@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CheckpointController : MonoBehaviour
 {
-    private List<GameObject> checkpoints = new List<GameObject>();
     public int currentCheckpoint;
     public int lap = 1;
     public int carId;
-    private float kentLapTimer;
+
+    private List<GameObject> checkpoints = new List<GameObject>();
+    private float lapTimer;
     private bool hasWon;
 
 #if UNITY_EDITOR
@@ -17,12 +18,12 @@ public class CheckpointController : MonoBehaviour
 
     private void Update()
     {
-        kentLapTimer += Time.deltaTime;
+        lapTimer += Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Checkpoint")
+        if(other.CompareTag("Checkpoint"))
         {
             GameObject passedCheckpoint = other.gameObject;
 
@@ -36,11 +37,11 @@ public class CheckpointController : MonoBehaviour
             }
         }
 
-        else if(other.tag == "Goal")
+        else if(other.CompareTag("Goal"))
         {
             if(currentCheckpoint == RaceManager.instance.checkpoints.Count)
             {
-                RaceManager.instance.AddKentLap(kentLapTimer, carId);
+                RaceManager.instance.AddLap(lapTimer, carId);
 
                 if (lap < RaceManager.instance.lapsToWin)
                 {
@@ -57,6 +58,7 @@ public class CheckpointController : MonoBehaviour
                     Time.timeScale = 0.0f;
                 }
             }
+
 #if UNITY_EDITOR
             if (instantWin)
             {
@@ -65,6 +67,7 @@ public class CheckpointController : MonoBehaviour
 #endif
         }
     }
+
     public void PassCheckpoint(GameObject checkpointIn)
     {
         currentCheckpoint++;
