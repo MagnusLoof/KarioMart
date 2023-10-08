@@ -1183,7 +1183,7 @@ PrefabInstance:
       objectReference: {fileID: 536194784}
     - target: {fileID: 3037783413150973550, guid: a4a41790f15dcbb4e9bb41d24b22fa0b, type: 3}
       propertyPath: bumpStrength
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3037783413150973550, guid: a4a41790f15dcbb4e9bb41d24b22fa0b, type: 3}
       propertyPath: turn.m_SingletonActionBindings.Array.data[1].m_Path
@@ -1277,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 1852691824}
     - target: {fileID: 3037783413150973550, guid: a4a41790f15dcbb4e9bb41d24b22fa0b, type: 3}
       propertyPath: bumpStrength
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7757259886825629477, guid: a4a41790f15dcbb4e9bb41d24b22fa0b, type: 3}
       propertyPath: m_LocalPosition.x

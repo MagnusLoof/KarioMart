@@ -146,7 +146,7 @@ MonoBehaviour:
   speedBoost: 0
   boostDuration: 3
   timer: 0
-  bumpStrength: 75
+  bumpStrength: 100
   bumpRadius: 5
   currentCheckpoint: 0
 --- !u!114 &1397346999212000874

@@ -1,12 +1,21 @@
 # KarioMart
  KarioMart school project.
 
-# Setup and playing the game
+
+# Setup, gameplay and keybinds
+My project is supposed to be open with Unity 2022.3.8f1.
 The starting scene should be irrelevant as my InitScript should automatically set the starting scene to StartScene.
 But in case that doesn't work, then StartScene should be set as the starting scene.
 
-All of the UI should be interactable with your mouse.
-To control player 1 and 2, you use the WADS keys and arrow keys respectively.
+All of the UI should be interactable with your mouse and in general are pretty straightforward.
+After clicking the play button, you can select which car to pick for each player by clicking the arrow buttons.
+After pressing continue you are then prompted to pick which map you want to play.
+After the scene loads a 3 second timer counts down after which the cars are now controlable.
+To control the direction and rotation of player 1 and 2, you use the WASD keys and arrow keys respectively.
+For one of the players to win you need to go around the map and pass the goal 3 times.
+The green orbs are speed boosts that can be collided with, and over time they respawn.
+If you crash into another player or a wall you'll bounce back a bit towards the direction you came from.
+Afterwards the winners lap times will be shown and you can then go back to start, restart the current map or quit.
 
 # Plan
 I first started working with what I deemed to be the most important part of the project, the car itself...
@@ -52,3 +61,7 @@ The first laps time would be correct, but the second lap would have the time for
 So when the race is won, I reverse the saved laptimes and put them in a for loop where i -= i+1, Until you're at the last i.
 Lastly I just reversed the valeus again so I can display them in the proper order.
 This information is also available in the RaceManager.cs as a comment.
+
+I've also discussed a lot of ideas with my classmates on how to do certain things, in addition to looking at my previous projects.
+
+Magnus Lööf
