@@ -1,5 +1,5 @@
 # KarioMart
- KarioMart school project.
+ KarioMart school project made by Magnus Lööf.
 
 
 # Setup, gameplay and keybinds
@@ -18,21 +18,28 @@ If you crash into another player or a wall you'll bounce back a bit towards the 
 Afterwards the winners lap times will be shown and you can then go back to start, restart the current map or quit.
 
 # Plan
-I first started working with what I deemed to be the most important part of the project, the car itself...
+I first started working with what I deemed to be the most important part of the project, the car itself.
+It has InputActions for acceleration and turning which affects the a Rigidbody attached to the car.
+As Rigidbody.MovePosition is used the car was able to keep driving into a wall to eventually phase through it.
+To prevent this I simply checked if I collided with a wall to disable the acceleration.
+However this way the car could not back away from the wall and had to rotate to adjust itself.
+So when the car collided with a wall I also decideed to addforce on the opposition direction of the collision contact.
+When the car exits the collision of the wall the acceleration InputAction gets enabled again.
 
-Then once the car was working I just made a simple map where I could add speedboosts, checkpoints and a goal...
+At first I had a Checkpoint script for all of the checkpoints that I had in the game.
+The point of this was to keep a list to track which cars had passed and to prevent a car passing multiple times.
+Once the goal was reached I had to check if all of the checkpoints had registered the car and then a lap had been made.
+However I realised it would be smarter that I make a new script for the car so they could add the checkpoints.
+Then when you pass the goal and you have passed all the checkpoints you can just clear the list of checkpoints and repeat.
+This prevented me from having a script on each checkpoint as well as the goal.
 
-Then I added the UI so that you could select the map, etc.
+I worked on the UI and the related scripts so that you could select which car and map you wanted to play.
+The way that I have made it has made my canvas and said scripts into a really huge mess that I definetly plant to improve on.
+On some scenes I had managers which were being transfered between scenes but not the UI, so all the UI references broke.
+Sadly as I have a lot to learn when it comes to UI I decided to simply have all of the UI in the same canvas.
 
-Eventually i added car selection, prefab wise I just had to make small changes to the speedboosts and car prefabs.
-Most difficult part was figuring out the math for the lists and the lists of lists. 
-
-Added a race manager which took take care of laptimes, checkpoints,
-
-Also struggled with the buttons losing references since the reference was being transfered between scenes but not the UI.
-I struggled for quite a bit so ended up just carrying over my UI between each scene.
-
-Countdown & fps limit
+I noticed that my GPU at home went up to 70% usage when I was playing the game in the editor as the game was at 1000FPS.
+To solve this I just added a FPS limiter within the settings menu, this dramatically lowered the GPU usage.
 
 
 # Stuff I had to look up or get help with
@@ -42,10 +49,11 @@ I've done similar things previously but forgot how to do it. When I looked up th
 https://stackoverflow.com/questions/56676894/how-convert-type-unityengine-texture2d-to-unityengine-sprite
 
 It talks about how to use Sprite.Create, I implemented the solution that I found.
-Shortly thereafter I realised the issue, I was using List<Texture2D> instead of just List<Sprite>.
+Shortly thereafter I realised the issue, I was using List<Texture2D> instead of just List<Sprite> that I forgot about.
+This realisation completely got rid of the issue that I had in the first place, but at least I learned something new.
 
 
-For my countdown I was setting a text to a float counting down from 0. I wanted to show decimal points, but only 2.
+For my countdown I was setting a text to a float counting down from 0. I wanted to show decimal points, but not all of them.
 
 https://forum.unity.com/threads/how-do-i-make-my-code-only-display-1-or-2-numbers-after-the-decimal.370059/
 

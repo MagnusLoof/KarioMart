@@ -70,6 +70,8 @@ public class CarController : MonoBehaviour
         turn.Enable();
     }
 
+    // Because of rb.MovePosition the car was able to keep driving into a wall to phase through it
+    // To prevent this I disable the acceleration and also added force on the opposite direction
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Wall"))
