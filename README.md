@@ -3,7 +3,7 @@
 
 
 # Setup, gameplay and keybinds
-My project is supposed to be open with Unity 2022.3.8f1.
+My project is supposed to be opened with Unity 2022.3.8f1 and uses the Unity Input System package.
 The starting scene should be irrelevant as my InitScript should automatically set the starting scene to StartScene.
 But in case that doesn't work, then StartScene should be set as the starting scene.
 
